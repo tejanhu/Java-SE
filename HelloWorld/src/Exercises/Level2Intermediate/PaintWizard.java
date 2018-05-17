@@ -31,7 +31,7 @@ public class PaintWizard {
 
     public Paint findLeastThatWastes(CheapoMax p1, AverageJoes p3, DuluxourousPaints p2) {
 
-        Paint paintType = new Paint(0.0,0,0.0);
+        Paint p = new Paint(0.0,0,0.0);
 
         double amountOfCheapoTinsNeeded = 0.0;
 
@@ -106,7 +106,7 @@ public class PaintWizard {
             leastLitresWasted = -1;
         }
 
-       return paintType;
+       return p;
 
     }
 

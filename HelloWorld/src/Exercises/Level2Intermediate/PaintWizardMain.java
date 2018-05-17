@@ -7,6 +7,6 @@ public class PaintWizardMain {
         DuluxourousPaints p3 = new DuluxourousPaints();
         PaintWizard pw = new PaintWizard(p,p2,p3);
         pw.calculateCheapest(p,p2,p3);
-        pw.findLeastThatWastes(p,p2,p3);
+        System.out.println(pw.findLeastThatWastes(p,p2,p3));
     }
 }
