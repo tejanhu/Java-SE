@@ -1,6 +1,3 @@
-Person:
-|John Smith|	Chartered-Accountant|	31|
-Person:
-|Madeline Richardson|	Station Officer|	30|
-Person:
-|Jhonny Smith|	Accountant Trainee|	19|
+John Smith  Chartered-Accountant  31
+Madeline Richardson  Station Officer  30
+Jhonny Smith  Accountant Trainee  19

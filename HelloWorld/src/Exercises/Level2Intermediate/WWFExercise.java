@@ -1,9 +1,6 @@
 package Exercises.Level2Intermediate;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class WWFExercise {
@@ -16,17 +13,19 @@ public class WWFExercise {
             File f = new File("greatFile.txt");
 
                 f.createNewFile();
-
-            for (int i = 0; i < list.size(); i++) {
-                myContent += "" + list.get(i);
-
-
-            }
-
             fw = new FileWriter(f);
             bw = new BufferedWriter(fw);
 
-            bw.write(myContent);
+            for (int i = 0; i < list.size(); i++) {
+                //myContent += "" + list.get(i);
+                bw.write(list.get(i).toString());
+                bw.newLine();
+            }
+
+
+
+          //  bw.write(myContent);
+          //  bw.newLine();
             System.out.println("File written Successfully");
 
         } catch (IOException ioEx) {
@@ -43,6 +42,32 @@ public class WWFExercise {
 
     }
 
+    public static ArrayList<String> populateList(){
+        ArrayList<String> dataList = new ArrayList<>();
+        String l = null;
+        BufferedReader bReader = null;
+        File f = new File("greatFile.txt");
+        String content [];
+        try {
+            int i = 0;
+            String str;
+            bReader = new BufferedReader(new FileReader(f));
+            while((l = bReader.readLine()) != null){
+                str = "";
+               content= l.split("  ");
+               for(String s : content){
+                   str += s;
+               }
+                dataList.add(str);
+            }
+            bReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+            return dataList;
+    }
+
 
     public static void main(String[] args) {
         ArrayList<Individual> personList = new ArrayList<>();
@@ -54,9 +79,14 @@ public class WWFExercise {
         personList.add(person2);
         personList.add(person3);
 
-        for (Individual p : personList) {
-            System.out.println(p);
-        }
+//        for (Individual p : personList) {
+//            System.out.println(p);
+//        }
         writePersontoFile(personList);
+
+
+
+        System.out.println(populateList());
+
     }
 }

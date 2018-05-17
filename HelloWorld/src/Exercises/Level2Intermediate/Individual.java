@@ -36,7 +36,7 @@ public class Individual {
     }
 
     public String toString(){
-        return "Person:\n"+ "|"+getName() +"|\t" + getOccupation() + "|\t" + getAge() +"|"+"\n";
+        return getName() +"  " + getOccupation() + "  " + getAge();
     }
 
 
