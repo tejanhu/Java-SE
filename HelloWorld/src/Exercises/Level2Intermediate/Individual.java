@@ -7,9 +7,9 @@ public class Individual {
     private int age;
 
     public Individual(String n, String o, int a) {
-        n = name;
-        o = occupation;
-        a = age;
+        name = n;
+        occupation = o;
+        age = a;
     }
     public String getName() {
         return name;
@@ -33,6 +33,10 @@ public class Individual {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String toString(){
+        return "Person:\n"+ "|"+getName() +"|\t" + getOccupation() + "|\t" + getAge() +"|"+"\n";
     }
 
 
