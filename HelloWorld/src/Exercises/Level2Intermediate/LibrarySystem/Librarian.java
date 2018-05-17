@@ -1,7 +1,5 @@
 package Exercises.Level2Intermediate.LibrarySystem;
 
-import Exercises.Level2Intermediate.Newspaper;
-
 public class Librarian implements Admin{
 
     public Librarian() {

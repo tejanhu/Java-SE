@@ -13,7 +13,6 @@ public abstract class Item {
         itemID = 0;
     }
 
-
     protected String getTitle() {
         return title;
     }
