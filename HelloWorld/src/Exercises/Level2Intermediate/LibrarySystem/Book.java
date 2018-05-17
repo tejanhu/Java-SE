@@ -1,7 +1,7 @@
 package Exercises.Level2Intermediate.LibrarySystem;
 
 public class Book extends Item {
-    int quantity = 0;
+    int quantity;
 
     protected Book(String title, String publisher, String publishedDate, int itemID, int quantity) {
         super(title, publisher, publishedDate, itemID);

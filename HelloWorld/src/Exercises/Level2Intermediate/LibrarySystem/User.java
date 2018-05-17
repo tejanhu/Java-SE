@@ -4,9 +4,9 @@ public interface User {
 
     public String searchItem(String someItem);
 
-    public void checkoutItem();
+    public String checkoutItem(Item item);
 
-    public void checkinItem();
+    public void checkinItem(Item item);
 
 
 }

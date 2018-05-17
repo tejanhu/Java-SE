@@ -5,12 +5,26 @@ public abstract class Item {
     String publisher = "";
     String publishedDate = "";
     int itemID;
+    boolean isAvailable;
+    boolean desiresItem;
 
-    Item(String title, String publisher, String publishedDate, int itemID) {
+
+
+    Item(String title, String publisher, String publishedDate, int itemID, boolean isAvailable, boolean desiresItem){
         title = "";
         publisher = "";
         publishedDate = "";
         itemID = 0;
+        isAvailable = true;
+        desiresItem = true;
+    }
+
+    public boolean getAvailablity() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 
     protected String getTitle() {
@@ -43,6 +57,10 @@ public abstract class Item {
 
     protected void setItemID(int itemID) {
         this.itemID = itemID;
+    }
+
+    protected boolean getDecision(){
+        return desiresItem;
     }
 
 

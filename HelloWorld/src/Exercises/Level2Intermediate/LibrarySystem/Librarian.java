@@ -49,4 +49,14 @@ public class Librarian implements Admin{
     public String searchItem(String someItem) {
         return null;
     }
+
+    @Override
+    public String checkoutItem(Item item) {
+        return null;
+    }
+
+    @Override
+    public void checkinItem(Item item) {
+
+    }
 }

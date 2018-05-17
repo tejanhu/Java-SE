@@ -23,13 +23,23 @@ public class Customer implements User {
     }
 
     @Override
-    public void checkoutItem() {
-
+    public String checkoutItem(Item item) {
+        String msg;
+        if(item.getAvailablity()){
+          item.setAvailable(false);
+          msg = "ITEM: "+ item+" AVAILABLE.";
+        }
+        else{
+            msg = "ITEM: "+ item+" IS NOT AVAILABLE.";
+        }
+        return msg;
     }
 
     @Override
-    public void checkinItem() {
+    public void checkinItem(Item item) {
+        if(item.desiresItem){
 
+        }
     }
 
 
