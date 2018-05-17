@@ -27,6 +27,7 @@ public class PaintWizard {
             p = p3;
         }
         System.out.println(p);
+        System.out.println("");
     }
 
     public Paint findLeastThatWastes(CheapoMax p1, AverageJoes p3, DuluxourousPaints p2) {
@@ -105,7 +106,8 @@ public class PaintWizard {
         } else {
             leastLitresWasted = -1;
         }
-
+        System.out.println("");
+        System.out.println("The Paint that wastes the least:");
        return p;
 
     }
