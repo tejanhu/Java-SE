@@ -1,29 +1,29 @@
 package Exercises.Level2Intermediate.LibrarySystem;
 
 public abstract class Item {
-    String title = "";
-    String publisher = "";
-    String publishedDate = "";
-    int itemID;
-    boolean isAvailable;
-    boolean desiresItem;
+    protected String title;
+    protected String publisher;
+    protected String publishedDate;
+    private static int itemID;
+    protected boolean isAvailable;
+    protected int quantity;
 
 
+    Item(String title, String publisher, String publishedDate, int itemID, boolean isAvailable, int quantity) {
+        this.title = title;
+        this.publisher = publisher;
+        this.publishedDate = publishedDate;
+        this.itemID = itemID;
+        this.isAvailable = isAvailable;
+        this.quantity = quantity;
 
-    Item(String title, String publisher, String publishedDate, int itemID, boolean isAvailable, boolean desiresItem){
-        title = "";
-        publisher = "";
-        publishedDate = "";
-        itemID = 0;
-        isAvailable = true;
-        desiresItem = true;
     }
 
-    public boolean getAvailablity() {
+    protected boolean getAvailablity() {
         return isAvailable;
     }
 
-    public void setAvailable(boolean isAvailable) {
+    protected void setAvailable(boolean isAvailable) {
         this.isAvailable = isAvailable;
     }
 
@@ -51,7 +51,7 @@ public abstract class Item {
         this.publishedDate = publishedDate;
     }
 
-    protected int getItemID() {
+    public int getItemID() {
         return itemID;
     }
 
@@ -59,8 +59,12 @@ public abstract class Item {
         this.itemID = itemID;
     }
 
-    protected boolean getDecision(){
-        return desiresItem;
+    protected int getQuantity() {
+        return quantity;
+    }
+
+    protected void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
 

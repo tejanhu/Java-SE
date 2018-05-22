@@ -1,19 +1,19 @@
 package Exercises.Level2Intermediate.LibrarySystem;
 
 public class Book extends Item {
-    int quantity;
+    protected String renewalDate;
 
-    protected Book(String title, String publisher, String publishedDate, int itemID, int quantity) {
-        super(title, publisher, publishedDate, itemID);
-        this.quantity = quantity;
+    protected Book(String title, String publisher, String publishedDate, int itemID, boolean isAvailable, int quantity) {
+        super("", "", "", itemID, isAvailable, quantity);
+        this.renewalDate = renewalDate;
     }
 
-    protected int getQuantity() {
-        return quantity;
+    protected String getrenewalDate() {
+        return renewalDate;
     }
 
-    protected void setQuantity(int quantity) {
-        this.quantity = quantity;
+    protected void setRenewalDate(String renewalDate) {
+        this.renewalDate = renewalDate;
     }
 
 

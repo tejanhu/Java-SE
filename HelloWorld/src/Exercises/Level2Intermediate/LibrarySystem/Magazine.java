@@ -1,10 +1,10 @@
 package Exercises.Level2Intermediate.LibrarySystem;
 
 public class Magazine extends Item {
-    String publisherAddress;
+    protected String publisherAddress;
 
-    protected Magazine(String title, String publisher, String publishedDate, int itemID, String publisherAddress) {
-        super(title, publisher, publishedDate, itemID);
+    protected Magazine(String title, String publisher, String publishedDate, int itemID, boolean isAvailable, int quantity, String publisherAddress) {
+        super(title, publisher, publishedDate, itemID, isAvailable, quantity);
         this.publisherAddress = publisherAddress;
 
     }

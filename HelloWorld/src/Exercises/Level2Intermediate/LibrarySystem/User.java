@@ -1,12 +1,14 @@
 package Exercises.Level2Intermediate.LibrarySystem;
 
+import java.util.ArrayList;
+
 public interface User {
 
-    public String searchItem(String someItem);
+    public String searchItem(ArrayList<Item> allItems, String itemTitle);
 
-    public String checkoutItem(Item item);
+    public void checkoutItem(ArrayList<Item> allItems, Item item);
 
-    public void checkinItem(Item item);
+    public void checkinItem(ArrayList<Item> allItems, Item item);
 
 
 }

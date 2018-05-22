@@ -1,18 +1,22 @@
 package Exercises.Level2Intermediate.LibrarySystem;
 
+import java.util.ArrayList;
+
 public interface Admin extends User {
 
-    public String searchItem(String someItem);
+    public void addItem(ArrayList<Item> items, Item newItem);
 
-    public void addItem();
+    public void removeItem(ArrayList<Item> items, Item newItem);
 
-    public void removeItem();
+    public void updateItem(ArrayList<Item> items, Item item);
 
-    public void updateItem();
+    public Customer registerPerson(ArrayList<Customer> users, int userID);
 
-    public void registerPerson(int userID);
+    public void deletePerson(ArrayList<Customer> customers, Customer newUser);
 
-    public void deletePerson(int userID);
+    public void updatePerson(ArrayList<Customer> customers, Customer newUser);
 
-    public void updatePerson();
+    public void checkinItem(ArrayList<Item> items, Item item);
+
+    public void checkoutItem(ArrayList<Item> items, Item item);
 }
