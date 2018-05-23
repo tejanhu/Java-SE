@@ -26,18 +26,35 @@ public class Librarian implements Admin {
 
     @Override
     public String searchItem(ArrayList<Item> items, String itemTitle) {
+
         String msg = "";
+        Book myPreciousBook = new Book("The Hobbit", "J. R. R. Tolkien", "09/21/1937", 1230456, true, 5);
+        Magazine someMag = new Magazine("Vogue", "Anna Wintour", "12/17/1892", 1230456, true, 1, "USA");
+        Newspaper myNewspaper = new Newspaper("The Sun", "Sun Publishing Company", "10/6/2016", 1230456, 25, true, 1);
+        items.add(myPreciousBook);
+        items.add(someMag);
+        items.add(myNewspaper);
+        boolean isFound = false;
+
         for (int i = 0; i < items.size(); i++) {
-            if (items.get(i).equals(itemTitle)) {
-                msg = items.get(i).getQuantity() + " copies of" + itemTitle + " Found";
-                break;
-            } else {
-                msg = "0 copies of" + itemTitle + " Found";
-                break;
+            if (items.get(i).getTitle().equals(itemTitle)) {
+                if (items.get(i).getQuantity() == 1) {
+                    msg = items.get(i).getQuantity() + " copy of " + itemTitle + " Found";
+                    System.out.println(msg);
+                    isFound = true;
+                    break;
+                } else {
+                    msg = items.get(i).getQuantity() + " copies of " + itemTitle + " Found";
+                    System.out.println(msg);
+                    isFound = true;
+                    break;
+                }
             }
         }
-
-
+        if (isFound == false) {
+            msg = "0 copies of " + itemTitle + " Found";
+            System.out.println(msg);
+        }
         return msg;
     }
 
@@ -49,6 +66,7 @@ public class Librarian implements Admin {
         String msg = "";
         String itemCheckout;
         if (checkOUT.equals("Y")) {
+            System.out.println("Enter the name of an item?");
             itemCheckout = scanner.nextLine();
             for (int i = 0; i < items.size(); i++) {
                 items.remove(item);
@@ -257,45 +275,4 @@ public class Librarian implements Admin {
         }
         System.out.println(newUser.getCustomerID() + " Does not exist!");
     }
-
-    public static void main(String[] args) {
-        Library lib = new Library();
-        Book myPreciousBook = new Book("The Hobbit", "J. R. R. Tolkien", "09/21/1937", 1230456, true, 1);
-        Magazine someMag = new Magazine("Vogue", "Anna Wintour", "12/17/1892", 1230456, true, 1, "USA");
-        Newspaper myNewspaper = new Newspaper("The Sun", "Sun Publishing Company", "10/6/2016", 1230456, 25, true, 1);
-
-        Customer person1 = new Customer(120108432);
-        Customer person2 = new Customer(120104421);
-        Customer person3 = new Customer(120101790);
-        Customer person4 = new Customer(120104568);
-        Customer person5 = new Customer(000000000);
-        Customer person111 = new Customer(111111111);
-
-        ArrayList<Customer> users = new ArrayList<>();
-
-        users.add(person1);
-        users.add(person2);
-        users.add(person3);
-        users.add(person4);
-
-        ArrayList<Item> items = new ArrayList<>();
-
-        items.add(myPreciousBook);
-        items.add(someMag);
-        items.add(myNewspaper);
-
-        Librarian someLibrarian = new Librarian("", "Librarian");
-
-        someLibrarian.searchItem(items, "The Hobbit");
-        someLibrarian.addItem(items, myPreciousBook);
-        someLibrarian.checkoutItem(items, myPreciousBook);
-        someLibrarian.checkinItem(items, myPreciousBook);
-        someLibrarian.removeItem(items, myPreciousBook);
-        someLibrarian.updateItem(items, myPreciousBook);
-        someLibrarian.registerPerson(users, 120109567);
-        someLibrarian.updatePerson(users, person111);
-        someLibrarian.deletePerson(users, person5);
-    }
-
-
 }

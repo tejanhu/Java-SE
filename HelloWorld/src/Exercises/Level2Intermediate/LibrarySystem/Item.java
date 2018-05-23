@@ -1,12 +1,12 @@
 package Exercises.Level2Intermediate.LibrarySystem;
 
 public abstract class Item {
-    protected String title;
-    protected String publisher;
-    protected String publishedDate;
+    private String title;
+    private String publisher;
+    private String publishedDate;
     private static int itemID;
-    protected boolean isAvailable;
-    protected int quantity;
+    private boolean isAvailable;
+    private int quantity;
 
 
     Item(String title, String publisher, String publishedDate, int itemID, boolean isAvailable, int quantity) {
@@ -27,7 +27,7 @@ public abstract class Item {
         this.isAvailable = isAvailable;
     }
 
-    protected String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -66,6 +66,8 @@ public abstract class Item {
     protected void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public String toString(){return "\nTitle: "+getTitle() + "\nPublisher: " + getPublisher() + "\nPublished Date: " + getPublishedDate() + "\nItem ID: " + getItemID() + "\nAvailable: " + getAvailablity() + "\nQuantity: " + getQuantity()+"\n";}
 
 
 }
